@@ -22,6 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".TransformActivity">
+        </activity>
         <activity android:name=".SchedulerActivity">
         </activity>
         <activity android:name=".CreateActivity">
