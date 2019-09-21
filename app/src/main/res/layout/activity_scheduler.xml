@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SchedulerActivity">
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="0"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/btn_same_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/same_thread"
+            />
+        <Button
+            android:id="@+id/btn_change_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/change_thread"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/btn_request_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/request_test"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+</LinearLayout>

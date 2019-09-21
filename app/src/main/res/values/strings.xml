@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">RxTest</string>
     <string name="handle_create">创建操作符</string>
+    <string name="schedulers">线程调度</string>
     <string name="create_observer">create()操作</string>
     <string name="create_observer2">链式create()操作</string>
+    <string name="change_thread">切换线程</string>
+    <string name="same_thread">相同线程</string>
+    <string name="request_test">request test</string>
 </resources>

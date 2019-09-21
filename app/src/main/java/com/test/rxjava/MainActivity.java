@@ -39,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.btn_schedulers).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SchedulerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private static String getLocalMac(Context context) {
