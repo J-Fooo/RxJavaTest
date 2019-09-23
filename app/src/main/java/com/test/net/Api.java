@@ -3,6 +3,7 @@ package com.test.net;
 import com.test.bean.BaseBean;
 import com.test.bean.HomeArticleList;
 import com.test.bean.LoginBean;
+import com.test.bean.RegisterBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -25,7 +26,7 @@ public interface Api {
      */
     @POST("user/register")
     @FormUrlEncoded
-    Observable<BaseBean<LoginBean>> register(@Field("username") String username, @Field("password") String password, @Field("repassword") String repassword);
+    Observable<BaseBean<RegisterBean>> register(@Field("username") String username, @Field("password") String password, @Field("repassword") String repassword);
 
 
     /**
