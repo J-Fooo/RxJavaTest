@@ -11,4 +11,10 @@
     <string name="transform_map">转换操作符Map</string>
     <string name="transform_flatmap">转换操作符FlatMap</string>
     <string name="request_transform_test">request transform test</string>
+    <string name="donext_scheduler">doNext处理后的线程转换</string>
+    <string name="tran_zip">zip操作符</string>
+    <string name="back_pressure">Back Pressure</string>
+    <string name="event_cache">缓存事件大小OOM</string>
+    <string name="sync_subscribe">同步订阅</string>
+    <string name="async_subscribe">异步订阅</string>
 </resources>

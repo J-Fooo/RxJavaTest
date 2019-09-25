@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BackPressureActivity"
+    android:padding="20dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_event_cache_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_cache"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="#7CB342"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_sync_subscribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sync_subscribe"
+        app:layout_constraintTop_toBottomOf="@id/tv_event_cache_size"
+        app:layout_constraintLeft_toLeftOf="@id/tv_event_cache_size"
+        android:background="#FB8C00"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_async_subscribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/async_subscribe"
+        app:layout_constraintTop_toBottomOf="@id/tv_sync_subscribe"
+        app:layout_constraintLeft_toLeftOf="@id/tv_sync_subscribe"
+        android:background="#B8416D"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
+</android.support.constraint.ConstraintLayout>

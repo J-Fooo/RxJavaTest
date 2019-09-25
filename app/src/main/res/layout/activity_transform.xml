@@ -8,13 +8,26 @@
     android:padding="10dp"
     tools:context=".TransformActivity">
 
-    <TextView
-        android:id="@+id/tv_tran_map"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        android:hint="username"/>
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="password"/>
+   <TextView
+        android:id="@+id/tv_tran_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_user_name"
+        app:layout_constraintLeft_toLeftOf="@id/et_user_name"
         android:background="#03A9F4"
         android:text="@string/transform_map"
         android:padding="10dp"
@@ -22,15 +35,46 @@
         android:textColor="#ffffff"
         android:elevation="3dp"
         />
+      <TextView
+         android:id="@+id/tv_tran_flatmap"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_constraintTop_toBottomOf="@id/tv_tran_map"
+         app:layout_constraintLeft_toLeftOf="@id/tv_tran_map"
+         app:layout_constraintRight_toRightOf="@id/tv_tran_map"
+         android:background="#D54439"
+         android:text="@string/transform_flatmap"
+         android:layout_marginTop="10dp"
+         android:textColor="#ffffff"
+         android:padding="10dp"
+         android:gravity="center"
+         android:elevation="3dp"
+         />
+
+     <TextView
+         android:id="@+id/tv_do_next"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_constraintTop_toBottomOf="@id/tv_tran_flatmap"
+         app:layout_constraintLeft_toLeftOf="@id/tv_tran_flatmap"
+         app:layout_constraintRight_toRightOf="@id/tv_tran_flatmap"
+         android:background="#43A047"
+         android:text="@string/donext_scheduler"
+         android:layout_marginTop="10dp"
+         android:textColor="#ffffff"
+         android:padding="10dp"
+         android:gravity="center"
+         android:elevation="3dp"
+         />
     <TextView
-        android:id="@+id/tv_tran_flatmap"
+        android:id="@+id/tv_tran_zip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_tran_map"
-        app:layout_constraintLeft_toLeftOf="@id/tv_tran_map"
-        app:layout_constraintRight_toRightOf="@id/tv_tran_map"
-        android:background="#D54439"
-        android:text="@string/transform_flatmap"
+        app:layout_constraintTop_toBottomOf="@id/tv_do_next"
+        app:layout_constraintLeft_toLeftOf="@id/tv_do_next"
+        app:layout_constraintRight_toRightOf="@id/tv_do_next"
+        android:background="#DAB624"
+        android:text="@string/tran_zip"
         android:layout_marginTop="10dp"
         android:textColor="#ffffff"
         android:padding="10dp"
@@ -38,19 +82,19 @@
         android:elevation="3dp"
         />
 
-    <TextView
-        android:id="@+id/tv_tran_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_tran_flatmap"
-        app:layout_constraintLeft_toLeftOf="@id/tv_tran_flatmap"
-        app:layout_constraintRight_toRightOf="@id/tv_tran_flatmap"
-        android:background="#DAB624"
-        android:text="@string/request_transform_test"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"
-        android:padding="10dp"
-        android:gravity="center"
-        android:elevation="3dp"
-        />
+     <TextView
+         android:id="@+id/tv_tran_test"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_constraintTop_toBottomOf="@id/tv_tran_zip"
+         app:layout_constraintLeft_toLeftOf="@id/tv_tran_zip"
+         app:layout_constraintRight_toRightOf="@id/tv_tran_zip"
+         android:background="#6C49B1"
+         android:text="@string/request_transform_test"
+         android:layout_marginTop="30dp"
+         android:textColor="#ffffff"
+         android:padding="10dp"
+         android:gravity="center"
+         android:elevation="3dp"
+         />
 </android.support.constraint.ConstraintLayout>

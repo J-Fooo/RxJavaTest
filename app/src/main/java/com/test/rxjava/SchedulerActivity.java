@@ -108,13 +108,13 @@ public class SchedulerActivity extends AppCompatActivity implements View.OnClick
 
                             @Override
                             public void onNext(BaseBean<HomeArticleList> homeArticleListBaseBean) {
-                                Log.d(TAG,homeArticleListBaseBean.getData().getSize()+"");
-                                mTvNum.setText(String.valueOf(homeArticleListBaseBean.getData().getSize()+""));
+                                Log.d(TAG, homeArticleListBaseBean.getData().getSize() + "");
+                                mTvNum.setText(String.valueOf(homeArticleListBaseBean.getData().getSize() + ""));
                             }
 
                             @Override
                             public void onError(Throwable e) {
-                                Log.d(TAG,e.getMessage());
+                                Log.d(TAG, e.getMessage());
                             }
 
                             @Override
@@ -133,13 +133,13 @@ public class SchedulerActivity extends AppCompatActivity implements View.OnClick
     protected void onDestroy() {
         super.onDestroy();
         /*
-        * 如果在请求的过程中Activity已经退出了, 这个时候如果回到主线程去更新UI, 那么APP肯定就崩溃了
-        * 可以使用Disposable开关，在Activity中将这个Disposable 保存起来, 当Activity退出时, 切断它即可
-        *
-        * 如果有多个Disposable，RxJava中已经内置了一个容器CompositeDisposable,
-        * 每当我们得到一个Disposable时就调用CompositeDisposable.add()将它添加到容器中,
-        * 在退出的时候, 调用CompositeDisposable.clear() 即可切断所有的水管
-        * */
+         * 如果在请求的过程中Activity已经退出了, 这个时候如果回到主线程去更新UI, 那么APP肯定就崩溃了
+         * 可以使用Disposable开关，在Activity中将这个Disposable 保存起来, 当Activity退出时, 切断它即可
+         *
+         * 如果有多个Disposable，RxJava中已经内置了一个容器CompositeDisposable,
+         * 每当我们得到一个Disposable时就调用CompositeDisposable.add()将它添加到容器中,
+         * 在退出的时候, 调用CompositeDisposable.clear() 即可切断所有的水管
+         * */
         mCompositeDisposable.clear();
     }
 }
