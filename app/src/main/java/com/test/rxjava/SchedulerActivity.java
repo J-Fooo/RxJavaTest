@@ -84,7 +84,6 @@ public class SchedulerActivity extends AppCompatActivity implements View.OnClick
                 };
 
                 // subscribeOn() 指定上游放射事件的线程   observeOn() 指定下游接收事件的线程
-
                 // Schedulers.newThread() 开启一个常规的新线程   AndroidSchedulers.mainThread() 线程为安卓主线程   Schedulers.io() io操作的线程, 通常用于网络,读写文件等io密集型的操作
 
                 Disposable changeSubscribe = observable.subscribeOn(Schedulers.io())

@@ -168,6 +168,7 @@ public class TransformActivity extends AppCompatActivity implements View.OnClick
                  * 组合的过程是分别从 两根水管里各取出一个事件 来进行组合, 并且一个事件只能被使用一次, 组合的顺序是严格按照事件发送的顺利 来进行的。
                  * 最终下游收到的事件数量 是和上游中发送事件最少的那一根水管的事件数量 相同。
                  * */
+
                 //上游水管1
                 Observable<Integer> observable1 = Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override

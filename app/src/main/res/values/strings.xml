@@ -17,4 +17,11 @@
     <string name="event_cache">缓存事件大小OOM</string>
     <string name="sync_subscribe">同步订阅</string>
     <string name="async_subscribe">异步订阅</string>
+    <string name="avoid_oom">防止内存溢出</string>
+    <string name="subscription_request">Subscription的request方法</string>
+    <string name="back_pressure_way">4种背压策略：</string>
+    <string name="back_pressures_error">BackpressureStrategy.ERROR</string>
+    <string name="back_pressures_buffer">BackpressureStrategy.BUFFER</string>
+    <string name="back_pressures_drop">BackpressureStrategy.DROP</string>
+    <string name="back_pressures_latest">BackpressureStrategy.LATEST</string>
 </resources>
