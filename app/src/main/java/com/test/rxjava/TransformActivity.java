@@ -79,7 +79,7 @@ public class TransformActivity extends AppCompatActivity implements View.OnClick
                 /*
                  * FlatMap() 将一个发送事件的上游Observable变换为多个发送事件的Observables，然后将它们发射的事件合并后放进一个单独的Observable里。
                  *
-                 * flatMap() 其实与 map() 类似，但是 flatMap() 返回的是一个 Observable.Map()返回的是转换后的数据
+                 * flatMap() 其实与 map() 类似，但是 flatMap() 返回的是一个Observable，Map()返回的是转换后数据类型后的数据
                  *
                  * 经过 flatMap() 转换后的事件是无序的，若有序需要使用 concatMap() 操作符
                  * */
@@ -126,6 +126,7 @@ public class TransformActivity extends AppCompatActivity implements View.OnClick
                  * doNext能响应上游发送的事件
                  * 只有创建的第一个Observable的subscribe方法为上游线程，后面无论是flatmap方法中返回的Observable的subscribe方法都是下游线程
                  * 下游线程可以重复多次切换
+                 *
                  * */
                 Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override

@@ -174,7 +174,7 @@ public class BackPressureActivity extends AppCompatActivity implements View.OnCl
                         /*
                          * request方法用于告诉上游下游的处理能力。
                          *   在同步订阅中，不声明request，或者声明处理能力的数量少于上游发送事件的数量是，会抛出MissingBackpressureException异常
-                         *   在异步订阅中，不声明request数量，上游会继续发送事件到水缸中（存放128个事件）,等待下游取出事件处理；声明了request，下游会取出对应数量的事件进行处理
+                         *   在异步订阅中，不声明request数量，上游会继续发送事件到水缸中（最多存放128个事件）,等待下游取出事件处理；声明了request，下游会取出对应数量的事件进行处理
                          * */
                         //                        s.request(2); //上游发射3个事件，这里声明处理能力为2个，多出来一个事件就会抛出MissingBackpressureException异常
                         //                        s.request(Long.MAX_VALUE);
@@ -184,7 +184,6 @@ public class BackPressureActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onNext(Integer integer) {
                         Log.d(TAG, "onNext: " + integer);
-
                     }
 
                     @Override
@@ -252,14 +251,83 @@ public class BackPressureActivity extends AppCompatActivity implements View.OnCl
             case R.id.tv_BUFFER:
                 //BackpressureStrategy.BUFFER
                 //增大上游缓冲水缸存放事件数。
+                Flowable.create(new FlowableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(FlowableEmitter<Integer> emitter) throws Exception {
+
+                    }
+                },BackpressureStrategy.BUFFER).subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+
+                    }
+                });
                 break;
             case R.id.tv_DROP:
                 //BackpressureStrategy.DROP
                 // 把存不下的事件丢弃。
+                // 当存储满了128个事件时，新发送的事件将不被保存，只留下最初存进来的128个事件
+                Flowable.create(new FlowableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(FlowableEmitter<Integer> emitter) throws Exception {
+                        for (int i = 0; ; i++) {
+                            emitter.onNext(i);
+                        }
+                    }
+                },BackpressureStrategy.DROP).subscribe(new Subscriber<Integer>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
                 break;
             case R.id.tv_LATEST:
                 //BackpressureStrategy.LATEST：
                 //只保留最新的事件。
+                //当水缸存储满128个事件后，继续向水缸发送事件，将保存最新的事件，对应将最旧的抛弃
+                Flowable.create(new FlowableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(FlowableEmitter<Integer> emitter) throws Exception {
+                        for (int i = 0; ; i++) {
+                            emitter.onNext(i);
+                        }
+                    }
+                },BackpressureStrategy.LATEST).subscribe(new Subscriber<Integer>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
                 break;
             default:
                 break;

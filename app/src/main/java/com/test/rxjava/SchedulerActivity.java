@@ -65,6 +65,7 @@ public class SchedulerActivity extends AppCompatActivity implements View.OnClick
             case R.id.btn_change_thread:
                 /*
                  * 通过Schedulers线程调度器对上下游线程进行切换
+                 *
                  * */
                 Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override
