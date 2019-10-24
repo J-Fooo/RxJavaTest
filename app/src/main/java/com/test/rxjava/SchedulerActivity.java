@@ -1,7 +1,6 @@
 package com.test.rxjava;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +10,7 @@ import com.test.bean.HomeArticleList;
 import com.test.net.Api;
 import com.test.net.RetrofitManager;
 
+import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;

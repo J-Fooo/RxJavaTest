@@ -1,13 +1,13 @@
 package com.test.rxjava;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
